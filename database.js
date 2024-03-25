@@ -1,8 +1,8 @@
 // add your information 
 const yourName = 'Time';  
-const yourID = 'XXXXXXXXX';  
-const yourmac = 'XX-XX-XX-XX-XX-XX';
-const yourip = 'XXX.XXX.XX.X';
+const yourID = 'xxxxxxxxxxx';  
+const yourmac = ' xx-xx-xx-xx-xx-xx';
+const yourip = 'xxx.xx.xx.xxx';
 console.log(`I'm ${yourName}.my IP is:${yourip}.my Mac address is:${yourmac}.NCC student ID is: (${yourID})`); 
   
 // import neccessary environment
@@ -23,11 +23,11 @@ const db = new sqlite3.Database('./book.db', (err) => {
     // create a table  
     db.run(`  
         CREATE TABLE IF NOT EXISTS books (  
-            id INTEGER PRIMARY KEY AUTOINCREMENT,  
-            title TEXT NOT NULL,  
-            author TEXT NOT NULL,  
-            isbn TEXT NOT NULL,  
-            context TEXT NOT NULL  
+            id626 INTEGER PRIMARY KEY AUTOINCREMENT,  
+            title626 TEXT NOT NULL,  
+            author626 TEXT NOT NULL,  
+            isbn626 TEXT NOT NULL,  
+            context626 TEXT NOT NULL  
         )  
     `, (err) => {  
         if (err) {  
@@ -42,12 +42,12 @@ const db = new sqlite3.Database('./book.db', (err) => {
   
 // the function of inserting a book. 
 function insertBooks() {  
-    rl.question('Enter book title: ', (title) => {  
-        rl.question('Enter book author: ', (author) => {  
-            rl.question('Enter book ISBN: ', (isbn) => {  
-                rl.question('Enter book context: ', (context) => {  
-                    db.run(`INSERT INTO books (title, author, isbn, context) VALUES (?, ?, ?, ?)`,  
-                        [title, author, isbn, context],  
+    rl.question('Enter book title: ', (title626) => {  
+        rl.question('Enter book author: ', (author626) => {  
+            rl.question('Enter book ISBN: ', (isbn626) => {  
+                rl.question('Enter book context: ', (context626) => {  
+                    db.run(`INSERT INTO books (title626, author626, isbn626, context626) VALUES (?, ?, ?, ?)`,  
+                        [title626, author626, isbn626, context626],  
                         (err) => {  
                             if (err) {  
                                 return console.error(err.message);  
@@ -82,7 +82,7 @@ function listAllBooks() {
             return console.error(err.message);  
         }  
         rows.forEach((row) => {  
-            console.log(`ID: ${row.id}, Title: ${row.title}, Author: ${row.author}, ISBN: ${row.isbn}`);  
+            console.log(`ID: ${row.id626}, Title: ${row.title626}, Author: ${row.author626}, ISBN: ${row.isbn626},Context:${row.context626}`);  
         });  
     });  
 }
